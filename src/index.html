@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <title>Multicast Message and File Transfer Tool</title>
+  <link rel="stylesheet" href="materialize/css/materialize.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="users">
+      <div class="users-collection collection">
+        <div class="refresh-users-button ">
+          Refresh
+        </div>
+        <a class="collection-header">
+          <h4 class="collection-header-text">Users</span></h4>
+
+        </a>
+        <div class="users-collection-items"></div>
+        <!-- <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
+          <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
+          <a href="#!" class="collection-item">Alan</a>
+          <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a> -->
+      </div>
+      <div class="groups-collection collection">
+        <a class="collection-header">
+          <h4 class="collection-header-text">Groups</h4>
+        </a>
+        <div class="groups-collection-items"></div>
+      </div>
+    </div>
+
+    <div class="chat-area">
+      <div class="card-container start-card">
+        <div class="row">
+          <div class="col m3"></div>
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Get Started</span>
+                <p>
+                  To get started, you can select a user or create a group.
+                </p>
+              </div>
+              <!-- <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div> -->
+            </div>
+          </div>
+          <div class="col m3"></div>
+        </div>
+      </div>
+      <div class="card-container chat-card">
+        <div class="row card-row">
+          <div class="card-panel chat-card-area">
+            <div class="message-user">
+              User
+            </div>
+            <div class="messages-content">
+              <!-- <div>
+                  <div>
+                    <div class="message-date-received-text">
+                      2020/6/16 19:50 Received
+                    </div>
+                  </div>
+                  <div class="message-text-container">
+                    <div class="message-text-received">
+                      This text is received from user.
+                    </div>
+                  </div>
+                </div> -->
+              <!-- <div>
+                  <div class="message-date-sent">
+                    <div class="message-date-sent-text">
+                      2020/6/16 19:50 Sent
+                    </div>
+                  </div>
+                  <div class="message-text-sent-container message-text-container">
+                    <div class="message-text-sent">
+                      This text is sent by me.
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+            <div class="send-message">
+              <div class="file-field input-field">
+                <button class="btn waves-effect waves-light file-btn blue">
+                  <img src="images/icons/attachment-24px.svg" class="file-button-icon" alt="file" />
+                  <input type="file" class="file-input" id="file" />
+                  <div class="file-count">1</div>
+                </button>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" data-caption='{count}'>
+                </div>
+              </div>
+              <div class="input-field message-input">
+                <input id="message" type="text" />
+                <label for="message">Message</label>
+              </div>
+              <button class="btn waves-effect waves-light send-message-btn blue">
+                <img src="images/icons/send-black-18dp.svg" class="send-button-icon" alt="send" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red add-button waves-effect modal-trigger" data-target="modal1">
+          <img src="images/icons/add-24px.svg" class="add-button-icon" alt="add" />
+        </a>
+      </div>
+    </div>
+
+
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Create a group</h4>
+        <div class="input-field">
+          <input id="group-name" type="text" />
+          <label for="group-name">Group Name</label>
+        </div>
+        <!-- <p>A bunch of text</p> -->
+        <div class="collection add-group-users-collection">
+          <!-- <a href="#!" class="collection-item blue-text">
+            <span class="badge">
+              <label>
+                <input type="checkbox" class="filled-in" checked="checked" />
+                <span></span>
+              </label>
+            </span>
+            Alan
+          </a>
+          <a href="#!" class="collection-item">Alan</a>
+          <a href="#!" class="collection-item">Alan</a>
+          <a href="#!" class="collection-item">Alan</a> -->
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="waves-effect waves-green btn-flat create-group-button">Create</a>
+        <a href="#!" class="modal-close waves-effect waves-red btn-flat modal-close-add-group">Cancel</a>
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>Please enter your name</h4>
+        <div class="input-field">
+          <input id="user-name-input" type="text" />
+          <label for="user-name-input">User Name</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="waves-effect waves-green btn-flat create-name-button">Start</a>
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h4>Editing users in group</h4>
+        <div class="collection edit-group-users-collection"></div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="waves-effect waves-red btn-flat modal-close">Close</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- <div class="add-group-background">
+      <div class="add-group-dialog"></div>
+    </div> -->
+  <!-- <h1>Hello World!</h1>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>. -->
+
+  <!-- You can also require other files to run in this process -->
+  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+  <script src="./renderer.js"></script>
+
+</body>
+
+</html>

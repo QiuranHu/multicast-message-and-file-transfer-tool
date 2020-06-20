@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Left panel */
+.users {
+  flex-basis: 33%;
+  min-width: 100px;
+  max-width: 300px;
+  border-right: 1px solid rgba(32, 33, 36, 0.28);
+  overflow: auto;
+}
+
+.chat-area {
+  flex-basis: 67%;
+  flex-grow: 1;
+}
+
+.collection {
+  margin: 5px;
+  height: 47%;
+  box-sizing: border-box;
+}
+
+.collection-header {
+  padding-left: 5px !important;
+}
+
+.users-collection .collection-item:last-child {
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.groups-collection .collection-item:last-child {
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.users-collection-items > .collection-item:first-of-type {
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.collection {
+  overflow: auto !important;
+}
+
+.groups-collection-items > .collection-item:first-of-type {
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.collection-header-text {
+  margin-left: 5px;
+}
+
+.add-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button-icon {
+  filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(223deg)
+    brightness(110%) contrast(104%);
+}
+
+.refresh-users-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: inline-block;
+  background-color: #2196F3;
+  border-radius: 5%;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/******************************************Chat Card******************************************/
+.chat-card {
+    min-width: 200px;
+    display:none;
+    height: calc(100% - 100px);
+}
+
+.card-row {
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding-bottom: 0;
+    margin-top: 6px;
+}
+
+.chat-card-area {
+    height: 100%;
+    box-sizing: content-box;
+    margin: 10px;
+    padding: 0;
+}
+
+/* Top bar */
+.message-user {
+  height: 40px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* The content of received messages. */
+.messages-content {
+  height: calc(100% - 106px);
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Bottom bar */
+.send-message {
+  height: 51px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.message-input {
+  flex-grow: 1;
+  margin: 1rem 30px 0 30px;
+}
+
+.input-field {
+  margin-bottom: 0;
+
+}
+
+.send-message-btn {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px !important;
+  box-sizing: border-box;
+  height: 36px !important;
+  min-width: 50px;
+}
+
+.send-button-icon {
+  filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(223deg)
+  brightness(110%) contrast(104%);
+  width: 24px;
+  height: 24px;
+}
+
+.file-button-icon {
+  filter: invert(100%) sepia(0%) saturate(7483%) hue-rotate(223deg)
+  brightness(110%) contrast(104%);
+}
+
+.file-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px !important;
+  box-sizing: border-box;
+  height: 36px !important;
+  position: relative;
+}
+
+.message-text-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.message-text-received {
+  background-color: #98ee99;
+  padding: 10px 20px 10px 20px;
+  max-width: 80%;
+  border-radius: 10px;
+  word-break: break-all;
+}
+
+.message-text-sent-container {
+  flex-direction: row-reverse;
+}
+
+.message-text-sent {
+  background-color: #4fc3f7;
+  padding: 10px 20px 10px 20px;
+  max-width: 80%;
+  border-radius: 10px;
+  word-break: break-all;
+}
+
+.message-date-received-text {
+  color: #75a478;
+}
+
+.message-date-sent-text {
+  color: #90caf9;
+}
+
+.message-date-sent {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#file-message{
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.file-path-wrapper {
+  display: none;
+}
+
+.file-count {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  line-height: 1em;
+  background-color: #b61827;
+  min-width: 10px;
+  border-radius: 20%;
+}
+
+/****************************************************Add Group Dialog******************************************************/
+/* .add-group-background {
+  box-sizing: content-box;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 998;
+  opacity: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-group-dialog {
+  box-sizing: content-box;
+  width: 30em;
+  height: 20em;
+  opacity: 1;
+  background-color: black;
+} */
+
+.add-group-user-item {
+  padding-right: 0 !important;
+}
+
+.checkbox-blue[type="checkbox"].filled-in:checked + span:not(.lever):after 
+{
+    border: 2px solid #2196F3;  
+    background-color: #2196F3;
+}
+
+/******************************************All input field**********************************************/
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #2196F3;
+  box-shadow: 0 1px 0 0 #2196F3;
+}
+
+.input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+  color: #2196F3;
+}
+
+/******************************************All collection items*****************************************/
+.collection a.collection-item  {
+  color: #2196F3;
+}
