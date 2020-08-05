@@ -9,4 +9,3 @@ To run the app, use npm start.
 
 ![UI](./ui.PNG)
 
-UPDATE: This program turns out to be really bad and unqualified for the final project of this course. The code is in a mess. Sad story.
